@@ -1,0 +1,92 @@
+:root{
+    --marker: 100px;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    background-color: bisque;
+}
+
+
+.cell{
+    background-color: bisque;
+    height: 100px;
+    width: 100px;
+    border: 2px solid rgb(3, 76, 76);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board {
+    height: 80vh;
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top: none;
+}
+.cell:nth-child(3n + 1){
+    border-left: none;
+}
+.cell:nth-child(3n + 3){
+    border-right: none;
+}
+.cell:last-child,
+.cell:nth-child(7),
+.cell:nth-child(8){
+    border-bottom: none;
+}
+
+.markX::before, .markX::after{
+    content: '';
+    width: calc(var(--marker)*.1);
+    height: calc(var(--marker)*.8);
+    background-color: black;
+    position: absolute;
+}
+.markX::before{
+    transform: rotate(45deg);
+}
+.markX::after{
+    transform: rotate(-45deg);
+}
+
+.markO::before, .markO::after{
+    content: '';
+    width: calc(var(--marker)*.8);
+    height: calc(var(--marker)*.8);
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.markO::after{
+    width: calc(var(--marker)*.6);
+    height: calc(var(--marker)*.6);
+    background-color: bisque;
+}
+
+.result{
+    font-size: 50px;
+    font-family: 'Courier New';
+    font-weight: 600;
+    color: rgb(3, 76, 76);
+    text-align: center;
+}
+button{
+    position: absolute;
+    left: 40vw;
+    right: 40vw;
+}
