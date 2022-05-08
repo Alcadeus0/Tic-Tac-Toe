@@ -20,7 +20,7 @@ const game = () => {
             if (winConFunction(marker)){
                 result(marker);
             }
-        }, {once:true});
+        });
     });
 
     const winConFunction = (mark) => {
@@ -56,7 +56,8 @@ const game = () => {
         document.querySelector('body').removeChild(el2)
         cellTacs.forEach(cell => {
             cell.classList.remove("markX", "markO");
-        }) 
+        })
+        
     }
 }
 const start = game();
