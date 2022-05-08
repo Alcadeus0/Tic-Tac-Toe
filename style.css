@@ -8,6 +8,9 @@
 }
 body{
     background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -83,10 +86,7 @@ body{
     font-family: 'Courier New';
     font-weight: 600;
     color: rgb(3, 76, 76);
-    text-align: center;
 }
 button{
-    position: absolute;
-    left: 40vw;
-    right: 40vw;
+    width: 200px;
 }
